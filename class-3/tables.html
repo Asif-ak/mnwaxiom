@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tables</title>
+</head>
+<body>
+    <!-- colspan attribute is used to increase the size of a column, usually used in merging columns -->
+    <table border="1"> 
+        <th>
+            Class #
+        </th>
+        <th>
+            Assignment #
+        </th>
+        
+        <tr>
+            <td>
+                Monday
+            </td>
+            <td>
+                1
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tuesday
+            </td>
+            <td rowspan="2">
+                2
+            </td>
+        </tr><tr>
+            <td>
+                Wednesday
+            </td>
+            <!-- <td>
+                2
+            </td> -->
+        </tr>
+    </table>
+    <!-- table scope is a direction of table flow -->
+    <!-- there are other tags like thead, tbody & tfoot for bigger and complex tables -->
+</body>
+</html>
