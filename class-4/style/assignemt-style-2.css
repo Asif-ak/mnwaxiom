@@ -5,6 +5,7 @@ table{
     color: white;
     background-color: greenyellow;
     font-size: 22px;
+    text-align: center;
 }
 td{
     width: 100px;
