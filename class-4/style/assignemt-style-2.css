@@ -1,0 +1,11 @@
+table{
+    background-color:lightgray;
+}
+.tablehead{
+    color: white;
+    background-color: greenyellow;
+    font-size: 22px;
+}
+td{
+    width: 100px;
+}
