@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chapter 7 Assignment</title>
+</head>
+<body>
+    <form action="#" method="get">
+        <p>User Name:
+        <input type="text" name="username" maxlength="30"></p>
+        <p>Password: 
+            <input type="password" name="password" id="pass" maxlength="15">
+        </p>
+        <p>
+            Date of Birth:
+            <input type="date" name="DOB" id="DOB">
+        </p>
+        <p>
+            Address:
+            <input type="text" name="Address" id="address">
+        </p>
+        <p>
+            <label>City: </label>
+            <select id = "myList">
+                <option value = "Karachi">Karachi</option>
+                <option value = "lahore">lahore</option>
+                <option value = "Multan">Multan</option>
+                <option value = "Peshawar">Peshawar</option>
+              </select>
+        </p>
+        <p>
+            Magazine:
+            <select name="Magazine" id="Mag" multiple="multiple">
+                <option value="Newsweek ">Newsweek </option>
+                <option value="Times">Times</option>
+                <option value="Fortune">Fortune </option>
+            </select>
+        </p>
+        <fieldset>
+            <legend>Contact Details</legend>
+            <p>
+               <label>Email: </label>
+               <input type="email" name="Email" id="email"><br />
+               <label>Mobile: </label>
+               <input type="text" name="Mobile" id="mobile"><br />
+               <label>Phone: </label>
+               <input type="text" name="Phone" id="phone">
+            </p>
+         </fieldset>
+         <p>Additional Comments:</p>
+         <textarea name="AC" id="ac" cols="30" rows="4"></textarea>
+
+         <p>Upload your picture:
+             <input type="file" name="Picture" id="picture">
+             <input type="submit" value="upload">
+         </p>
+         <fieldset>
+             <legend>Subscription</legend>
+             <input type="radio" name="sub" id="one">1 year
+             <input type="radio" name="sub" id="two">2 years
+             <br />
+             <input type="checkbox" name="check" id="three">
+             Yes! Put me on the list!
+         </fieldset>
+         <input type="submit" value="Subscribe">
+    </form>
+</body>
+</html>
