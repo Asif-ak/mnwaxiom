@@ -1,0 +1,13 @@
+table{
+    border: 1px black solid;
+    background-color: rgb(211, 211, 211);
+    margin: 0px auto;
+}
+.heading{
+    color: white;
+    background-color: rgb(157, 196, 95);
+    text-align: center;
+}
+td{
+    width: 100px;
+}

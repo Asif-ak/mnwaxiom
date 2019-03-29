@@ -1,0 +1,16 @@
+h1,h3,dt{
+    color: blue;
+
+}
+.bg{
+    background-color: lightslategray;
+}
+.price{
+    font-size: 22px;
+    font-weight: bold;
+}
+.warning{
+    color: red !important;
+    font-size: 12px;
+    font-style: italic;
+}
