@@ -28,3 +28,7 @@ dt::first-letter{
 dd::first-letter{
     text-transform: uppercase;
 }
+.container{
+    padding-left: 20px;
+    padding-right: 20px;
+}
