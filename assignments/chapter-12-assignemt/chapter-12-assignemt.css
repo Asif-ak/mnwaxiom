@@ -1,0 +1,30 @@
+h1{
+    font-size: 48px;
+    color: red;
+    text-shadow: 0.5px -2px 0px black;
+}
+h2{
+    color: red;
+}
+.align{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #000000;
+}
+dt{
+    background-color: lightgray;
+    color: white;
+    text-indent: 15px;
+    text-shadow: 0.5px 0px 0.5px black;
+    font-weight: bold;
+}
+dt::first-letter{
+    text-transform: uppercase;
+}
+dd::first-letter{
+    text-transform: uppercase;
+}
