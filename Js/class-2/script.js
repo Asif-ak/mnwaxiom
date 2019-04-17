@@ -41,3 +41,9 @@ console.log(cities[1][1]);
 cities[1].forEach(element => {
     console.log(element);
 });
+
+// array in js is not primitive type,
+// array is object type means
+// it is mutable (primitives are immutable)
+// assigning  one array to another and changing 
+// the value of other will change the value of first 
