@@ -47,3 +47,7 @@ cities[1].forEach(element => {
 // it is mutable (primitives are immutable)
 // assigning  one array to another and changing 
 // the value of other will change the value of first 
+console.log(typeof(cities));
+
+
+
