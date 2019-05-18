@@ -40,3 +40,65 @@ console.log(typeof(newnum));
 // 2 cannot contain: spaces 
 // 3 cannot start with: number
 // 4 use camelcase e.g newNumber, somethingImportant, codeRunner
+
+// chapter 5
+// alert(2+2);
+
+// alert(9%3);
+
+// chapter 6
+
+num=1;
+// newnum=num++; // will result in 1 bcoz the value of num is assigned to newnum prior to increament.
+newnum=++num; // will get 2 bcoz the value of num is assigned to newnum after increament
+// alert(newnum);
+
+num=2;
+// newnum=num--;
+newnum=--num;
+// alert(newnum);
+
+// alert(1+3*4); // precedance rule (multiplication first as in algebra)
+// if we use brackets, precedence will be overriden
+// alert(((2*4)*4)+2);
+
+// var a=prompt("please enter name");
+// alert("thanks "+a);
+
+// concatenating number with string will result in string. see below
+// alert("2 + 2 equals " + 2+2);
+
+// enums out of curiosity :)
+const days={monday:0, tuesday:1, wednesday:2, thursday:3, friday:4, saturday:5, sunday:6};
+// alert(days.monday);
+
+// chapter 9
+var a='hello';
+var b='World';
+
+// prompt(a,b)
+
+// chapter 10
+// var d=true;
+// if (d) {
+    // alert(true);
+// }
+
+// chapter 11
+// = assignement operator
+// == equality operator
+// === type equality operator
+
+console.log(2==2);
+var e='12';
+console.log(typeof(e));
+var f='12';
+var g ='h'
+console.log(typeof(f));
+// alert('12'=='hello')
+console.log(e===f); //true // it will only be true if both type and contents are same otherwise false
+console.log(f===g); // false
+
+console.log(2===3);// false
+
+// chapter 12
