@@ -39,13 +39,21 @@ function editli(a)
     var input=document.createElement("input");
     var submit=document.createElement("input");
     submit.setAttribute("type","submit")
-    submit.setAttribute("onclick","update(this)");
+    submit.setAttribute("onclick","updateli(this)");
     input.setAttribute("type","text")
+    input.setAttribute("size","35")
     getli.replaceChild(input,getli.childNodes[0])
     getli.insertBefore(submit,getli.childNodes[1]);
     input.value=litext;
 }
 
-function update(a) {
+function updateli(a) {
+    var parent=a.parentNode;
+    var inputtext=a.parentNode.childNodes[0].value;
+    console.log(inputtext);
+    var newli=document.createTextNode(inputtext);
+    parent.replaceChild(newli,parent.childNodes[0]);
+    parent.removeChild(parent.childNodes[1]);
     
+
 }

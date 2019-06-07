@@ -1,5 +1,5 @@
 input[type="submit"]{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 
 #div1{
@@ -9,9 +9,20 @@ input[type="submit"]{
 /* #div2{
     text-align: center;
 } */
-li{
-    margin-left: 390px;
-}
+
+  /* CSS by GenerateCSS.com */ 
+ul{ 
+    list-style-type: katakana;
+    list-style-image: url(' ');
+    list-style-position: inside;
+    
+} 
+li{ 
+ /* padding: 5px;  */
+    margin-left: 390px; 
+  /* padding-right: 150px; */
+}  
+
 #text-1{
     text-align: center;
     border: 0px none;
