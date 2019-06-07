@@ -7,6 +7,8 @@ function addli(){
     }
 
     else{
+        // for dynamically adding css style to div2
+        document.getElementById("div2").setAttribute("class","div2")
         var parent =document.getElementById("ul1");
         var li = document.createElement("li");
         li.textContent = text;
