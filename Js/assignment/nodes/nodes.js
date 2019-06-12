@@ -59,3 +59,18 @@ function updateli(a) {
     
 
 }
+
+// Service Worker Code
+// service worker require webserver to work
+// all the pages must include the file whcih contain below code.
+
+if("serviceWorker" in navigator)
+{
+    navigator.serviceWorker.register("./serviceWorker.js")
+    .then(function(){
+        console.log("Service Worker Registered");
+    }).catch(function(){
+        console.log("Error generated during Service Worker Registration");
+    })
+
+}
