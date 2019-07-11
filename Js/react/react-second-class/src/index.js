@@ -11,7 +11,7 @@ import * as obj from './Helper';
 // See react docs for supported tag
 
 // a parent element is required to encapsulated child elements
-// jsx does not support wrting tags in string as opposed to js.
+// jsx does not support writing tags in string as opposed to js.
 const element = <div>
     <h1>
         Hello JSX
@@ -47,7 +47,7 @@ const anotherelement=obj.anotherElementFunction(newlist) // working
 // <* as some to call whole object instead of particular fuction or class 
 
 // another way to render class inherited from React.Component
-ReactDOM.render(anotherelement, document.getElementById('root'));
+ReactDOM.render(<div>{element}{anotherelement}{newelement}</div>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
