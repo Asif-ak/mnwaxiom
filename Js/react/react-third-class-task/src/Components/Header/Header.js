@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.css';
-import logo from './logo.svg'
+import logo from './logo.svg';
 
-class Header extends React.Component{
+function Header() {
 
-    render(){
+    // render(){
         return(
             <div className='header-container'>
                
@@ -28,19 +28,15 @@ class Header extends React.Component{
                 </div>
 
             </div>
-        )
-    }
+        );
+    // }
 }
-class GetDate extends React.Component{
-    
-
-    render(){
-        let today= new Date();
-        var get= today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-        return(
-            <h2>{get}</h2>
-        )
-    }
+function GetDate (){
+    let today = new Date();
+    var get= today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+    return(
+        <h2>{get}</h2>
+    )
 }
 
 export default Header;
