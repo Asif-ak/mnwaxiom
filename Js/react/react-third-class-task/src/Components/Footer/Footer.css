@@ -1,0 +1,20 @@
+.footer-container{
+    width: 80%;
+    bottom: 0;
+    position: fixed;
+}
+.footer-bar{
+    height: 20%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+footer{
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.footer-center-alignment{
+    text-align: center;
+}
