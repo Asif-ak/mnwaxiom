@@ -40,6 +40,14 @@ class Cities extends Component {
     }
 }
 
+function abc(props) {
+    return(
+        <div>
+            {props.whatever}
+        </div>
+    )
+}
+
 // state is js object which determine how that component renders & behave
 // state can only be used within class component {statefull component} not with functional component {stateless component}.
 // state is private to component and can only be controlled by it.
