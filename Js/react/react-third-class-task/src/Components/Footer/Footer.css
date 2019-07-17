@@ -18,3 +18,10 @@ footer{
 .footer-center-alignment{
     text-align: center;
 }
+@media only screen and (max-width:600px)
+{
+    address{
+        display:none;
+    }
+    
+}

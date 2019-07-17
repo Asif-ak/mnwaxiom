@@ -4,7 +4,7 @@ import './Body-Components.css';
 export default function BodyComponent(props) {
     return(
         <div className='bodyComponent-container bodyComponent-div-border bodyComponent-default-margin'>
-            <table>
+            {/* <table>
                 <th>
                     Name
                 </th>
@@ -19,17 +19,17 @@ export default function BodyComponent(props) {
                         {props.name}
                     </td>
                     <td>
-                    {props.info}
-                </td>
-                <td>
-                    {props.contact}
+                        {props.info}
+                    </td>
+                    <td>
+                        {props.contact}
                     </td>
                 </tr>
-                
-                
-                
-            </table>
-            {/* <p>
+
+
+
+            </table> */}
+            <p>
                 Name: {props.name}
             </p>
             <p>
@@ -37,7 +37,7 @@ export default function BodyComponent(props) {
             </p>
             <p>
                 Contact: {props.contact}
-            </p> */}
+            </p>
         </div>
     )
 }
