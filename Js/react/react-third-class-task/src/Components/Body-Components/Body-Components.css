@@ -1,0 +1,15 @@
+.bodyComponent-container{
+    display: flex;
+    flex-flow: column wrap;
+    /* align-items: center; */
+    width: 30%;
+}
+.bodyComponent-div-border{
+    border: 2px solid black;
+}
+.bodyComponent-default-margin{
+    margin: 0 auto;
+}
+td{
+    text-align: center;
+}
