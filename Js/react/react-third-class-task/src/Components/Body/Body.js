@@ -8,7 +8,7 @@ export default class Body extends React.Component{
         return(
             <div className='body-container body-top-margin'> 
                 <BodyComponents name="Asif" 
-                info="Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel." 
+                info="Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam." 
                 contact="123456">
                 </BodyComponents>
                 <BodyComponents name="Mehreen" 

@@ -29,14 +29,15 @@ export default function BodyComponent(props) {
 
 
             </table> */}
+            
             <p>
-                Name: {props.name}
+                <b>Name:</b> {props.name}
             </p>
             <p>
-                Informations: {props.info}
+                <b>Informations:</b> {props.info}
             </p>
             <p>
-                Contact: {props.contact}
+                <b>Contact:</b> {props.contact}
             </p>
         </div>
     )
