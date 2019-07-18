@@ -31,6 +31,8 @@ export default class UserInput extends React.Component{
         // and navigate those pages using navbar
         // dont use actual link or <a> tag
         // use onclick event instead
+        // Dont use React.RenderDom() in index.js
+        // use app.js for rending instead
     }
 
 
