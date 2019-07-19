@@ -1,0 +1,21 @@
+.home-container{
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: space-between; */
+    
+}
+.home-top-margin{
+    margin-top: 15%;
+}
+@media only screen and (max-width:600px){
+    .body-container{
+        flex-flow: column wrap;
+    }
+    .body-top-margin{
+        margin-top: 4%;
+    }
+}
+.home-default-margin{
+    margin: 0 auto;
+    /* align-content: center; */
+}

@@ -1,13 +1,13 @@
 import React from 'react';
 import './Header.css';
+import './Body.css';
 import logo from './logo.svg';
+import Home from '../Home/Home';
+import BodyComponents from './../Body-Components/Body-Components';
+
 
 class Header extends React.Component {
-    constructor(props){
-        super(props);
-        // this.statesetting=this.statesetting.bind(this);
-        // this.li1=React.createRef();
-    }
+    
 
     // state={info1:"Info-1", info2:"Info-2", info3:"Info-3"}
     state={info:""};
@@ -31,36 +31,68 @@ class Header extends React.Component {
         console.log(this.state.info);
 
         return(
-            <div className='header-container'>
+            <React.Fragment>
+                <div className='header-container'>
                
-                <div className='header-nav-bar header-default-margin'>
-                   
-                    <div className='header-logo'>
-                        <img src={logo} className="App-logo" alt="logo" />
-                    </div>
-                    <div >
-                        <ul>
-                            <li onClick={() => this.handleLiValue("info-1")}>
-                                Info-1
-                            </li>
-                            <li onClick={() => this.handleLiValue("info-2")}>
-                                Info-2
-                            </li>
-                            <li onClick={() => this.handleLiValue("info-3")}>
-                                Info-3
-                            </li>
-                        </ul>
-                    </div>
-                    <div >
-                        <span>
-                            <GetDate />
-                        </span>
+               <div className='header-nav-bar header-default-margin'>
+                  
+                   <div className='header-logo'>
+                       <img src={logo} className="App-logo" alt="logo" />
+                   </div>
+                   <div >
+                       <ul>
+                           <li onClick={() => this.handleLiValue("info-1")}>
+                               Info-1
+                           </li>
+                           <li onClick={() => this.handleLiValue("info-2")}>
+                               Info-2
+                           </li>
+                           <li onClick={() => this.handleLiValue("info-3")}>
+                               Info-3
+                           </li>
+                       </ul>
+                   </div>
+                   <div >
+                       <span>
+                           <GetDate />
+                       </span>
 
+                   </div>
+
+               </div>
+
+           </div>
+           
+           <div>
+               {
+                    this.state.info === "info-1" ? <div className='body-container body-top-margin'>
+                    <BodyComponents name="Info-1"
+                    info="Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam."
+                    contact="123456"> 
+                    </BodyComponents>
                     </div>
-
-                </div>
-
+                    : this.state.info === "info-2" ? <div className='body-container body-top-margin'>
+                    <BodyComponents name="Info-2"
+                    info="Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi."
+                    contact="987654">
+                    </BodyComponents>
+                    </div>
+                    : this.state.info === "info-3" ? <div className='body-container body-top-margin'>
+                    <BodyComponents name="Info-3"
+                    info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+                    contact="852159">
+                    </BodyComponents>
+                    </div>
+                    : this.state.info === "home" ? <Home />
+                    :<Home />
+                } 
+           
             </div>
+
+               }
+           {/* </div> */}
+           
+            </React.Fragment>
         );
     };
 

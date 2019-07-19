@@ -1,5 +1,4 @@
 import React from 'react';
-import Body from './Components/Body/Body';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 
@@ -11,7 +10,6 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Body />
         <Footer />
       </React.Fragment>
     );
