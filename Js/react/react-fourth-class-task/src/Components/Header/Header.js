@@ -37,7 +37,7 @@ class Header extends React.Component {
                <div className='header-nav-bar header-default-margin'>
                   
                    <div className='header-logo'>
-                       <img src={logo} className="App-logo" alt="logo" />
+                       <img src={logo} className="App-logo" alt="logo" onClick={()=>this.handleLiValue("home")} />
                    </div>
                    <div >
                        <ul>
