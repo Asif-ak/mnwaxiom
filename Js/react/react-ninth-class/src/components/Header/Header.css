@@ -1,0 +1,45 @@
+.Header-container {
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: #273c75;
+    color: white;
+
+}
+
+.Header-logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: wheat;
+}
+
+.Header-container-ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.Header-container-ul li {
+    margin: 10px;
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+.Header-container-ul li a:hover {
+    color: wheat;
+    cursor: alias;
+    transition: 0.5s;
+}
+
+
+.Header-container a {
+    text-decoration: none;
+    color: white;
+}
+
+.Header-li-active a {
+    color:#fbc531;
+}
