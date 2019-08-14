@@ -14,19 +14,51 @@ export default class Router extends React.Component{
     state={
         isLoggedIn:true
     }
+    
     render(){
         const {isLoggedIn}=this.state;
+        const patharray=[
+            {
+              component: Home,
+              path: "/"
+            },
+            {
+                component: About,
+              path: "/about"
+            },
+            {
+                component: Profile,
+              path: "/profile"
+            },
+            {
+                component: Contact,
+              path: "/contact"
+            },
+            {
+                component:  Login ,
+              path: "/login"
+            }];
+        console.log(patharray);
+        
         return(
             <BrowserRouter>
             <Header />
             <Switch>
-                <PrivateRoute exact isLoggedIn={isLoggedIn} path='/dashboard' component={Dashboard} />
-                <Route exact path='/' component={Home} />
+            <PrivateRoute exact isLoggedIn={isLoggedIn} path='/dashboard' component={Dashboard} />
+                {
+                    
+                    patharray.map((items,index)=>
+                    (
+                        <Route key={index} exact path={items.path} component={items.component} />
+                    ))
+                }
+                    <Route component={NotFound} />
+                {/* <Route exact path='/' component={Home} />
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/about' component={About} />
                 <Route exact path='/profile' component={Profile} />
-                <Route exact path='/contact' component={Contact} />
-                <Route component={NotFound} />
+                <Route exact path='/contact' component={Contact} /> */}
+                
             </Switch>
             </BrowserRouter>
         );
