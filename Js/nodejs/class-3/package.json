@@ -6,13 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "stop": "node server.stop.js"
+    
   },
   "author": "M Asif",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "simple-jwt": "^1.0.3"
+    "nodemon": "^1.19.3",
+    "simple-jwt": "^1.0.3",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
   }
 }
