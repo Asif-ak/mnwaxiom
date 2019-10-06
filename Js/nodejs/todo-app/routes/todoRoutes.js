@@ -189,8 +189,8 @@ router.delete('/deletetodobyID/:todoID', async (req,res)=>{
                 message: "Todo not found with id " + req.params.todoID
             });
         }
-        // todoModel.deleteOne(todo);
-        res.send({204: "Todo deleted successfully"});
+        
+        res.status(204).send("Todo deleted successfully");
     } catch (err) {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
