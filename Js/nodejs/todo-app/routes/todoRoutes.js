@@ -3,7 +3,7 @@ const router = config.express.Router();
 const todoModel = require('../models/todomodel');
 
 router.post('/newtodo', async (req,res,next)=>{
-    if(!req.body.content) {
+    if(!req.body) {
         
         return res.status(400).send({
             message: "Todo content can not be empty"
@@ -12,7 +12,7 @@ router.post('/newtodo', async (req,res,next)=>{
 
     // Create a Todo
     const todo = todoModel({
-        todoName: req.body.todoName || "Untitled Todo", 
+        todoName: req.body.todoName , 
         todoTask: req.body.todoTask
     });
 
@@ -80,7 +80,7 @@ router.get('/getbyID/:todoID',async (req,res)=>{
     //     });
     // });
     try {
-        let todo = await todoModel.findById(req.param.todoID);
+        let todo = await todoModel.findById(req.params.todoID);
         if(!todo){
             return res.status(404).send({
                 message: "Todo not found with id " + req.params.todoID
@@ -99,7 +99,7 @@ router.get('/getbyID/:todoID',async (req,res)=>{
     }
 })
 
-router.put('/:todoID/:todoID', async (req,res)=>{
+router.put('/updatetodobyID/:todoID', async (req,res)=>{
     // Validate Request
     if(!req.body.content) {
         return res.status(400).send({
@@ -161,7 +161,7 @@ router.put('/:todoID/:todoID', async (req,res)=>{
     }
 })
 
-router.delete('/:todoID/:todoID', async (req,res)=>{
+router.delete('/deletetodobyID/:todoID', async (req,res)=>{
     // todoModel.findByIdAndRemove(req.params.todoID)
     // .then(todo => {
     //     if(!todo) {
@@ -182,14 +182,16 @@ router.delete('/:todoID/:todoID', async (req,res)=>{
     // });
 
     try {
-        let todo = todoModel.findByIdAndRemove(req.param.todoID);
+        let todo = await todoModel.findOneAndRemove({_id:req.params.todoID});
+        
         if(!todo){
             return res.status(404).send({
                 message: "Todo not found with id " + req.params.todoID
             });
         }
-        res.send(204).send(`Todo with id ${todo.todoID} deleted successfully`);
-    } catch (error) {
+        // todoModel.deleteOne(todo);
+        res.send({204: "Todo deleted successfully"});
+    } catch (err) {
         if(err.kind === 'ObjectId' || err.name === 'NotFound') {
             return res.status(404).send({
                 message: "Todo not found with id " + req.params.todoID
