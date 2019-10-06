@@ -19,7 +19,12 @@ app.use((req,res,next)=>{
 
 const server = config.http.createServer(app);
 
-let PORT=config.PORT;
+let PORT;
+try {
+    PORT=config.PORT;
+} catch (error) {
+    console.log(error);
+}
 
 server.listen(PORT,()=>{`server started at ${PORT}`});
 db.connect();
