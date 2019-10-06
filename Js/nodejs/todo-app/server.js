@@ -17,16 +17,6 @@ app.use((req,res,next)=>{
 });
 
 
-
-
-
-
-
-
-
-
-
-
 const server = config.http.createServer(app);
 
 let PORT=config.PORT;
