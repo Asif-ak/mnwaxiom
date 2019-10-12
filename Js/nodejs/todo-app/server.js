@@ -1,14 +1,14 @@
 const db = require('./helper/dbConnet');
-const config= require('./helper/config');
+const helper= require('./helper/helper');
 const todoRoutes=require('./routes/todoRoutes');
-const app=config.express();
+const app=helper.express();
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(config.parser.urlencoded({ extended: true }))
+app.use(helper.parser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
-app.use(config.parser.json());
+app.use(helper.parser.json());
 
-app.use(config.express.json({extended:false}))
+app.use(helper.express.json({extended:false}))
 
 app.use('/api/v1/todo',todoRoutes)
 // catch 404 not found
@@ -17,15 +17,16 @@ app.use((req,res,next)=>{
 });
 
 
-const server = config.http.createServer(app);
+const server = helper.http.createServer(app);
 
 let PORT;
 try {
-    PORT=config.PORT;
+    PORT=helper.PORT;
 } catch (error) {
     console.log(error);
 }
 
 server.listen(PORT,()=>{`server started at ${PORT}`});
-db.connect();
+// db.connect();
+db();
 // app.listen(PORT,()=>{`server started at ${PORT}`})

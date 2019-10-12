@@ -1,5 +1,5 @@
-const config = require('../helper/config');
-const router = config.express.Router();
+const helper = require('../helper/helper');
+const router = helper.express.Router();
 const todoModel = require('../models/todomodel');
 
 router.post('/newtodo', async (req,res,next)=>{

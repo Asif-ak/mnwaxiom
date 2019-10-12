@@ -1,18 +1,25 @@
-const config =require('./config');
+// const config =require('./config');
+const config=require('config');
+const helper=require('../helper/helper')
+const mongoose = helper.mongoose;
 
-function dbconnect() {
-    config.mongoose.Promise = global.Promise;
-    return config.mongoose.connect(config.dburl,{
-        useNewUrlParser: true
-    }).then(() => {
-        console.log("Successfully connected to the database");    
-    }).catch(err => {
-        console.log('Could not connect to the database. Exiting now...', err);
-        process.exit();
-    });
+const dburl =config.get('DBURL');
+
+const dbconnect=async()=> {
+    try {
+        await mongoose.connect(dburl, {
+             useNewUrlParser: true,
+             useCreateIndex: true,
+             useFindAndModify: true,
+             useUnifiedTopology: true
+         });
+         console.log('MongoDB Connected Successfully!')
+     } catch (error) {
+         console.log('Unable to connect:', error.message);
+     }
     
 }
 
 
 // Connecting to the database
-exports.connect=dbconnect;
+module.exports=dbconnect;

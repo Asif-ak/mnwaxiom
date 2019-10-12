@@ -1,5 +1,5 @@
-const config = require('../helper/config');
-const mongoose = config.mongoose;
+const helper = require('../helper/helper');
+const mongoose = helper.mongoose;
 
 const todoSchema = mongoose.Schema({
     
