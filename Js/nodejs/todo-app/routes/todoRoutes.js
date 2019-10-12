@@ -12,7 +12,7 @@ router.post('/newtodo', async (req,res,next)=>{
 
     // Create a Todo
     const todo = todoModel({
-        todoName: req.body.todoName , 
+        todoName: req.body.todoName, 
         todoTask: req.body.todoTask
     });
 
