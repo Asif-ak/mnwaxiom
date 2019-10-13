@@ -93,4 +93,4 @@ typings/
 *.eslintrc.js
 rekit-sample/
 Js/nodejs/PSDB
-Js/nodejs/PSDB-client
+Js/nodejs/psdb-client
