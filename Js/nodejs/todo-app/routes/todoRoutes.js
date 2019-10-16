@@ -1,8 +1,20 @@
 const helper = require('../helper/helper');
 const router = helper.express.Router();
 const todoModel = require('../models/todomodel');
+const Joi = helper.Joi;
+const auth = require('../middlewares/auth');
 
-router.post('/newtodo', async (req,res,next)=>{
+const paramsValidation = helper.Joi.object({
+    title: Joi.string().required().min(1).max(50),
+    description: Joi.string().required().min(1).max(500),
+    isCompleted: Joi.bool()
+})
+
+// @route    GET api/v1/todo/get-tasks
+// @desc     Get tasks
+// @access   Private
+
+router.post('/newtodo',auth, async (req,res,next)=>{
     if(!req.body) {
         
         return res.status(400).send({

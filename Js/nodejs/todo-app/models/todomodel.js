@@ -3,11 +3,12 @@ const mongoose = helper.mongoose;
 
 const todoSchema = mongoose.Schema({
     
-    todoName: {type:String,min:1, max: 50, required:true},
-    createOn:{type: Date, default: Date.now(), required:true},
-    todoTask: {type:String,min:1, max: 500, required:true},
-    completedOn:{type: Date}
-});
+    title: {type:String,min:1, max: 50, required:true},
+    description: {type:String,min:1, max: 500, required:true},
+    completedOn:{type: Date},
+    isCompleted: { type: Boolean, required: true, default: false },
+    createdBy:{type:mongoose.Schema.Types.ObjectId, ref:'User',required:true}
+},{timestamps:true});
 
 
 // the below is virtual getter and virtual setter can also be created:
