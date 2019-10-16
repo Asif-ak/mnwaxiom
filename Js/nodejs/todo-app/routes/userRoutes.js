@@ -8,8 +8,8 @@ const userModel = require('../models/usermodel');
 const JWT_SECRET = process.env.JWT_SETRET || config.get('JWT_SECRET');
 
 const paramsValidation = helper.Joi.object({
-    username: Joi.string().required().min(1).lowercase().trim(), // make sure u recieve clean username
-    password: Joi.string().min(8).required().trim()
+    username: Joi.string().required().min(1),//.lowercase().trim(), // make sure u recieve clean username
+    password: Joi.string().min(8).required()
 })
 
 // @route POST api/v1/user/register
@@ -18,6 +18,8 @@ const paramsValidation = helper.Joi.object({
 
 router.post('/register',async (req, res)=>{
     let {username, password}=req.body;
+    username = username.toLowerCase();
+
 
     try {
         const {error} =paramsValidation.validate({username,password});
@@ -40,8 +42,8 @@ router.post('/register',async (req, res)=>{
             username,password
         })
 
-        const salt = helper.bcrypt.genSalt(10);
-        const hash = helper.bcrypt.hash(password,salt);
+        const salt = await helper.bcrypt.genSalt(10);
+        const hash = await helper.bcrypt.hash(password,salt);
 
         newuser.password=hash;
         await newuser.save();
@@ -57,7 +59,7 @@ router.post('/register',async (req, res)=>{
         // });
         return res.json({
             success: true,
-            token,
+            // token,
             message: "User registered successfully",
         });
     } catch (error) {
@@ -75,7 +77,8 @@ router.post('/register',async (req, res)=>{
 // @access   Public
 router.post('/login', async (req, res)=>{
     let { username, password } = req.body;
-    const { error } = apiParamsSchema.validate({ username, password });
+    
+    const { error } = paramsValidation.validate({ username, password });
     if (error) {
         return res.status(400).json({
             success: false,

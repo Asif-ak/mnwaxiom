@@ -2,15 +2,15 @@ const config=require('config');
 const helper=require('../helper/helper')
 const mongoose = helper.mongoose;
 
-// const dburl =config.get('DBURL');
-const MONGO_ATLAS=config.get('MONGO_ATLAS');
+const dburl =config.get('DBURL');
+// const MONGO_ATLAS=config.get('MONGO_ATLAS');
 
 const dbconnect=async()=> {
     try {
-        await mongoose.connect(MONGO_ATLAS, {
+        await mongoose.connect(dburl, {
             useNewUrlParser: true,
             useCreateIndex: true,
-            // useFindAndModify: false,
+            useFindAndModify: false,
             useUnifiedTopology: true
         });
          console.log('MongoDB Connected Successfully!')

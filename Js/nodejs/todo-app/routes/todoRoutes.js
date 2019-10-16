@@ -15,17 +15,20 @@ const paramsValidation = helper.Joi.object({
 // @access   Private
 
 router.post('/newtodo',auth, async (req,res,next)=>{
-    if(!req.body) {
-        
-        return res.status(400).send({
-            message: "Todo content can not be empty"
+    const { title, description, isCompleted } = req.body;
+
+    // validate api params
+    const { error } = paramsValidation.validate({ title, description, isCompleted });
+    if (error) {
+        return res.status(400).json({
+            success: false,
+            message: error.details[0].message
         });
     }
 
     // Create a Todo
     const todo = todoModel({
-        todoName: req.body.todoName, 
-        todoTask: req.body.todoTask
+        title, description, createdBy: req.user.id
     });
 
     // Save Todo in the database
@@ -53,23 +56,45 @@ router.post('/newtodo',auth, async (req,res,next)=>{
     
 })
 
-router.get('/getalltodo',async (req,res)=>{
-    // todoModel.find()
-    // .then(todos => {
-    //     res.send(todos);
-    // }).catch(err => {
-    //     res.status(500).send({
-    //         message: err.message || "Some error occurred while retrieving Todos."
-    //     });
-    // });
+// @route    GET api/v1/todo/get-tasks
+// @desc     Get todos of logged-in user
+// @access   Private
+
+router.get('/getalltodo', auth,async (req,res)=>{
     try {
-        let todo = await todoModel.find();
-        res.send(todo);
-        
-    } catch (err) {
-        return res.status(500).send(err);
-        
+        const todos = await todoModel.find({ createdBy: { $in: req.user.id } }).populate('createdBy', { password: 0,createdAt:0,updatedAt:0,__v:0 });
+
+        // not working
+        // const todos = await todoModel.find({"createdBy":helper.mongoose.Schema.Types.ObjectId(`${req.user.id}`)});
+        if (todos.length < 1) {
+            return res.json({
+                success: true,
+                message: "You have not created any task yet!"
+            });
+        }
+        return res.json({
+            success:true,
+            todos
+        });
+    } catch (error) {
+        console.log('Error:', error.message);
+        res.status(500).json({
+            message: "Internal server error",
+            success: false,
+            error: error.message
+        });
     }
+ 
+
+
+    // try {
+    //     let todo = await todoModel.find();
+    //     res.send(todo);
+        
+    // } catch (err) {
+    //     return res.status(500).send(err);
+        
+    // }
 })
 
 router.get('/getbyID/:todoID',async (req,res)=>{
