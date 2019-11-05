@@ -21,9 +21,25 @@
     <![endif]-->
 </head>
 
+<!-- print hidden using js -->
+<script>
+    function hide(x) {
+  if (x.matches) { // If media query matches
+    var body=document.getElementsByName("body").classlist.add("hidden-print");
+
+  } 
+}
+
+var x = window.matchMedia("(print)")
+hide(x) // Call listener function at run time
+x.addListener(hide) // Attach listener function on state changes
+</script>
+
+
+<!-- print hidden using css -->
 <body style="width: 100%;" style="@media print {
     div { hidden-print}    
-}">
+}" >
     <div class="container hidden-print">
         <div class="row">
             <div class="col-lg-12">
