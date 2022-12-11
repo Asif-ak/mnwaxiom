@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^1.19.3",
     "simple-jwt": "^1.0.3",
     "socket.io": "^2.3.0",
